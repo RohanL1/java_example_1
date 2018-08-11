@@ -1,0 +1,28 @@
+class A{
+
+	A(){
+		//System.out.println("A");
+	}
+}
+
+
+class B extends A{
+	B(){
+		//System.out.println("B");
+	}
+
+	public static B makeB(){
+		B b = new B();
+		System.out.println(b);//prints reference of local object b --> First Object
+		return(new B());//returns reference of object of class B --> Second Object
+	}
+}
+
+class ObjectTest{
+	public static void main(String args[]){
+		//B b = new B();
+		A a = new A();
+		System.out.println(a);
+		System.out.println(B.makeB());//calls static method makeB and returns reference of new object of class B --> Third Object  
+	}
+}
